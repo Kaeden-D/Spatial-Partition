@@ -4,7 +4,7 @@ using System.Collections;
 namespace SpatialPartitionPattern
 {
     //The soldier base class for enemies and friendly
-    public class Soldier : MonoBehaviour
+    public class Soldier
     {
         //To change material
         public MeshRenderer soldierMeshRenderer;

@@ -52,23 +52,17 @@
       }
 
       var buildUrl = "Build";
-      var loaderUrl = buildUrl + "/Spatial Partition.loader.js";
+      var loaderUrl = buildUrl + "/Spatial-Partition.loader.js";
       var config = {
         arguments: [],
-        dataUrl: buildUrl + "/Spatial Partition.data",
-        frameworkUrl: buildUrl + "/Spatial Partition.framework.js",
-        codeUrl: buildUrl + "/Spatial Partition.wasm",
+        dataUrl: buildUrl + "/Spatial-Partition.data",
+        frameworkUrl: buildUrl + "/Spatial-Partition.framework.js",
+        codeUrl: buildUrl + "/Spatial-Partition.wasm",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "DefaultCompany",
         productName: "Spatial partition",
         productVersion: "0.1.0",
         showBanner: unityShowBanner,
-        // errorHandler: function(err, url, line) {
-        //    alert("error " + err + " occurred at line " + line);
-        //    // Return 'true' if you handled this error and don't want Unity
-        //    // to process it further, 'false' otherwise.
-        //    return true;
-        // },
       };
 
       // By default, Unity keeps WebGL canvas render target size matched with

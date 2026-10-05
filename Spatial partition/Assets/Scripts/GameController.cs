@@ -1,6 +1,8 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+//using UnityEditor.SearchService;
+using UnityEngine.SceneManagement;
 
 namespace SpatialPartitionPattern
 {
@@ -25,11 +27,12 @@ namespace SpatialPartitionPattern
         List<Soldier> closestEnemies = new List<Soldier>();
 
         //Grid data
+        [SerializeField]
         float mapWidth = 50f;
         int cellSize = 10;
 
         //Number of soldiers on each team
-        int numberOfSoldiers = 100;
+        int numberOfSoldiers;
 
         //The Spatial Partition grid
         Grid grid;
@@ -37,6 +40,8 @@ namespace SpatialPartitionPattern
 
         void Start()
         {
+            numberOfSoldiers = (int)(2f * mapWidth);
+
             //Create a new grid
             grid = new Grid((int)mapWidth, cellSize);
 
@@ -135,5 +140,16 @@ namespace SpatialPartitionPattern
 
             return closestEnemy;
         }
+
+        private void OnGUI()
+        {
+            
+            if (GUILayout.Button("Next Scene"))
+            {
+                SceneManager.LoadScene((SceneManager.GetActiveScene().buildIndex + 1) % SceneManager.sceneCountInBuildSettings);
+            }
+
+        }
+
     }
 }
